@@ -4,7 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const video_routes_1 = __importDefault(require("./video.routes"));
 const v1Router = express_1.default.Router();
+v1Router.use("/videos", video_routes_1.default);
 v1Router.get("/ping", (_, res) => {
     res.json({ message: "pong!" });
 });
